@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color: rgb(55, 10, 97);
+    }
+    .o{    
+        border: 3px solid black;
+        border-radius: 14px;
+        padding: 5px;
+        font-size: 40px;
+    } 
+    .form{
+        align-items:  bottom center;
+        justify-content:  center;
+        display: flex;
+    }
+</style>
+<script>
+    function check(){
+        let x= document.getElementById("pass").value;
+        let y= document.getElementById("user").value;
+        let n= document.getElementById("err1");
+        let u= document.getElementById("err2");
+        
+        let valid = true;
+        if(x !== "admin"){
+            u.textContent="password wrong!";
+            u.style.color = "red";
+           u.style.borderStyle= "dashed";
+           u.style.bordercolor="red";
+           
+            valid = false;
+        }
+        if(y !== "admin"){
+            n.textContent = "user wrong!";
+            n.style.color = "white";
+            n.style.border=" 2px dashed red";
+            valid = false;
+        }
+        if(x !== "admin" && y !== "admin") {
+            n.textContent = "user wrong!";
+            u.textContent = "password wrong!";
+        }   
+        if (x==="admin"&& y==="admin"){
+let str="";
+str+="<input type='submit' onclick='login()'>"
+document.getElementById("bt").innerHTML=str;
+
+    }
+   
+}   
+     function login(){
+        
+      window.locatio.href ="https://www.google.com";
+        
+       
+     }   
+    
+</script>
+</head>
+<body>
+    <div class="form">
+        <div class="o">
+            <p> login</p>
+            <label>user</label>
+            <input type="text" placeholder="user" id="user" required/><br>
+            <span id="err1"></span>
+            <br>
+            <label>pass</label>
+            <input type="password" id="pass" required/><br>
+            <span id="err2"></span>
+            <br>
+            <button onclick="check();">check</button>
+            <span id="bt"></span>
+        </div>
+    </div>
+</body>
+</html>
+
+
